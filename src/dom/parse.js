@@ -408,7 +408,7 @@ wysihtml5.dom.parse = (function() {
     })(),
     
     alt: (function() {
-      var REG_EXP = /[^ a-z0-9_\-]/gi;
+      var REG_EXP = /[^ a-z0-9_\/:\.\-]/gi;
       return function(attributeValue) {
         if (!attributeValue) {
           return "";
