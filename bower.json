@@ -1,3 +1,5 @@
 {
-	"main": "./dist/wysihtml5-0.4.0pre.min.js"
+  "name": "wysihtml5",
+  "main": "./dist/wysihtml5-0.4.0pre.min.js",
+  "ignore": []
 }
