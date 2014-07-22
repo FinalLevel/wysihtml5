@@ -406,7 +406,27 @@ wysihtml5.dom.parse = (function() {
         });
       };
     })(),
-    
+
+		href_go: (function() {
+			var REG_EXP = /^(\/|https?:\/\/|mailto:)/i;
+			var REG_EXP_GO = /^\/go\/[0-9]+\/(.+)$/i;
+			return function(attributeValue) {
+				if (!attributeValue) {
+					return null;
+				}
+				var maches = attributeValue.match(REG_EXP_GO);
+				if (maches) {
+					attributeValue = decodeURIComponent(maches[1])
+				}
+				if (!attributeValue.match(REG_EXP)) {
+					return null;
+				}
+				return attributeValue.replace(REG_EXP, function(match) {
+					return match.toLowerCase();
+				});
+			};
+		})(),
+ 
     alt: (function() {
       var REG_EXP = /[^ a-z0-9_\/:\.\-]/gi;
       return function(attributeValue) {
