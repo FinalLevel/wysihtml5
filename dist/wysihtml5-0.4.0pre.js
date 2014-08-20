@@ -5180,7 +5180,7 @@ wysihtml5.dom.parse = (function() {
 //      var REG_EXP = /\D/g;
       return function(attributeValue) {
 //        attributeValue = (attributeValue || "").replace(REG_EXP, "");
-        return attributeValue || null;
+        return attributeValue;
       };
     })()
   };
